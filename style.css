@@ -1,0 +1,36 @@
+.animation{
+height: 50px;
+width: 100px;
+background-color: antiquewhite;
+animation-name: new;
+animation-duration: 5s;
+animation-iteration-count: infinite;
+}
+@keyframes div{
+    from{width: 100px;}
+    to{width: 200px;}
+}
+@keyframes new{
+    0%{height: 50px;
+    background-color: antiquewhite;}
+    50%{height: 100px;}
+    100%{height: 200px;
+    background-color: aqua;}
+}
+.animation2{
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+    box-shadow:0px 5px 15px 15px black;
+    font-size: 30px;
+    animation-name: animation2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+@keyframes animation2{
+    from{background-color: blue;
+    font-size: 30px;}
+    to{background-color: red;
+    font-size: 60px;
+    color: gray;}
+}
