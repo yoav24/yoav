@@ -1,0 +1,29 @@
+p {
+    color: red;
+}
+
+.parg1 {
+    font-size: 30px;
+}
+
+/* body - font size 16px */
+.parg2 {
+    font-size: 120%;
+}
+
+.parg3 {
+    font-size: 1.4em; /* rem/em */
+}
+
+.parent {
+    font-size: 30px;
+}
+
+.parg4 {
+    color: green;
+    font-size: 1.6em;
+}
+
+.parg5 {
+    font-size: 1.6rem;
+}
