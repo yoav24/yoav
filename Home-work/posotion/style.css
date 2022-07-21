@@ -1,0 +1,13 @@
+
+.p1:hover,.p2:hover,.p3:hover{
+font-size: 1.6rem;
+} 
+.p1{
+    font-size: 0.8em;
+}
+.p2{
+    font-size: 1.3rem;
+}
+.p3{
+    font-size: 1.1rem;
+}
