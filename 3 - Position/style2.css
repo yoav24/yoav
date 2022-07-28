@@ -1,0 +1,14 @@
+.parent{
+    position: relative;
+    width: 50%;
+}
+.p1{
+position: absolute;
+top: 0px;
+}
+.p1:hover{
+    top: 50px;
+}
+img{
+width: 100%;
+}
