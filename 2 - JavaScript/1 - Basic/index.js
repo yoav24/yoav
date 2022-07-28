@@ -28,4 +28,3 @@ const funcArrow = (a, b) => { // arrow function
     return a + b
 }
 
-
