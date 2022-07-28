@@ -1,0 +1,38 @@
+/* div {
+    width: 20%;
+} */
+
+.one {
+background-color: aqua;
+position: relative;
+left: 100px;
+}
+
+.two {
+    background-color: blue;
+    position: absolute;
+    left: 50px;
+}
+
+.three {
+    background-color: blueviolet;
+}
+
+.relative {
+    position: relative;
+    background-color: aqua;
+    width: 50%;
+}
+
+img {
+    /* position: absolute; */
+    width: 100%;
+}
+
+p {
+    position: absolute;
+    /* top:0; */
+    bottom: 0;
+    color: aliceblue;
+    text-shadow: 0 0 5px black;
+}
