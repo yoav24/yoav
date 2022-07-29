@@ -15,16 +15,18 @@
 // 4+2=6
 // 6=4+x // 6-4=x
 // //2=x
-
-function func(a, b) { //regular function
-    return a + b
+var fname = prompt("what is you'r first name?")
+var lname = prompt("what is you'r last name?")
+function func(fname, lname) { //regular function
+    // return fname + " "+lname
+    return `My full name is ${fname} ${lname}`
 }
+console.log(func(fname,lname))
+// (a, b) => { //anonymous function
+//     return a + b
+// }
 
-(a, b) => { //anonymous function
-    return a + b
-}
-
-const funcArrow = (a, b) => { // arrow function
-    return a + b
-}
+// const funcArrow = (a, b) => { // arrow function
+//     return a + b
+// }
 
