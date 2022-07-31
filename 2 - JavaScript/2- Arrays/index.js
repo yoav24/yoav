@@ -51,3 +51,10 @@ console.log(yoav1)
 const findByIndex = arr1.findIndex(item => item.name == "Katya")
 console.log(findByIndex)
 
+/////////
+/*
+1. Write new array includes name and age with length of 5.
+2. Slice the array from 2 to 4
+3. Create new array by using map.
+4. Filter the array.
+*/
