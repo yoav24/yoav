@@ -42,7 +42,13 @@ squre.style.width = "2rem"
 squre.style.height = "2rem"
 
 // squre.classList.add("square")
-function change_color (){
-    squre.style.background = "blue"
+const colors = ["red", "yellow", "blue", "purple"]
+
+
+function change_color() {
+    const random = Math.round(Math.random() * colors.length)
+    squre.style.background = colors[random]
+    console.log(random)
 }
+
 squre.onclick = change_color
