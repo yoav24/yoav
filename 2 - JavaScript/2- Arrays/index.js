@@ -25,7 +25,7 @@ const newArr1 = arrHobies.forEach(el => {
     return `I love ${el}`
 });
 
-// console.log(newArr1)
+console.log(newArr1)
 
 //-----filter----
 const arr1 = [

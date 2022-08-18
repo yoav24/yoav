@@ -17,7 +17,15 @@ arr.push(newUser)
 //     newUser
 // ]
 // console.log(arr)
-
-
-
-console.log(window)
+var myfriend = [
+    {name:"Omer", age: 11 , hobbies: "coding" },
+    {name:"Neta", age: 12 , hobbies: "basketball,drumming" },
+    {name:"Ethan", age: 10  , hobbies: "basketball,swiming" },
+    {name:"Noam", age: 12 , hobbies: "basketball,to draw"},
+    {name:"Alon", age: 12 , hobbies: "basketball"}
+]
+var myfriends = myfriend.forEach((el) => {
+    return "my name is" + el.name + "I" + el.age +" years old and I love to play"+ el.hobbies
+})
+console.log(myfriends)
+console.log(window.document.title)
