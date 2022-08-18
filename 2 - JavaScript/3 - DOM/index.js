@@ -1,5 +1,5 @@
 
-// const root = document.querySelector('#root')
+const root = document.querySelector('#root')
 // console.log(root)
 
 // console.log(root.innerText)
@@ -12,6 +12,8 @@
 // root.style.color = "white"
 
 // root.classList.add("fromJS")
+// root.classList.remove("one")
+// root.classList.toggle("fromJS")
 
 // function handleGetText() {
 //     console.log(root.innerText)
@@ -34,3 +36,13 @@
 
 // Create square with red background
 // Create function that change the background color - onclick
+const squre = document.querySelector(".squre")
+squre.style.background = "red"
+squre.style.width = "2rem"
+squre.style.height = "2rem"
+
+// squre.classList.add("square")
+function change_color (){
+    squre.style.background = "blue"
+}
+squre.onclick = change_color

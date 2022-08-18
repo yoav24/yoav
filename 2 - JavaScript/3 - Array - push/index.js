@@ -20,4 +20,4 @@ arr.push(newUser)
 
 
 
-
+console.log(window)
