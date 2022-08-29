@@ -24,8 +24,8 @@ var myfriend = [
     {name:"Noam", age: 12 , hobbies: "basketball,to draw"},
     {name:"Alon", age: 12 , hobbies: "basketball"}
 ]
-var myfriends = myfriend.forEach((el) => {
-    return "my name is" + el.name + "I" + el.age +" years old and I love to play"+ el.hobbies
+var myfriends = myfriend.map((el) => {
+    return `my name is  ${el.name}   I  ${el.age}   years old and I love to play  ${el.hobbies} `
 })
 console.log(myfriends)
 console.log(window.document.title)
