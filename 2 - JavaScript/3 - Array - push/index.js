@@ -27,5 +27,8 @@ var myfriend = [
 var myfriends = myfriend.map((el) => {
     return `my name is  ${el.name}   I  ${el.age}   years old and I love to play  ${el.hobbies} `
 })
+document.getElementById("title").innerHTML = `<h1>${window.document.title}</h1>`
+let title = document.getElementById("title")
+title.style.color = "red"
 console.log(myfriends)
 console.log(window.document.title)
