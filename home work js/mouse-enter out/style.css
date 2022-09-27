@@ -1,0 +1,25 @@
+body{
+    background-color: hsl(30, 38%, 92%);
+    height: 98vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.head{
+    height: 40%;
+    width:40%;
+
+}
+
+img{
+    width: 30%;
+    height: 35%;
+
+}
+button{
+    background-color: hsl(158, 36%, 37%);
+    height: 7%;
+    width:20%;
+}
+
