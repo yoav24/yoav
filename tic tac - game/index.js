@@ -38,10 +38,12 @@ function cellClick() {
     }
 
     if (checkWin(data)) {
-        alert('you win!')
+        document.getElementById("head").innerHTML=`player ${player } win`
     }
 
     player = player == "x" ? "o" : "x"
+    console.log(data)
+    document.getElementById("turn").innerHTML=`its ${player } turn`
 }
 
 function checkWin(data) {

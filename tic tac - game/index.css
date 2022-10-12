@@ -21,3 +21,13 @@ body {
     align-items: center;
 
 }
+h1{
+    position: relative;
+    bottom:20%;
+    right: 17%;
+}
+h2{
+    position:relative;
+    top: 27%;
+    right: 15%;
+}

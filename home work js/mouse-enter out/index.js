@@ -12,9 +12,9 @@ button.addEventListener('mouseout',() =>{
 })
 window.addEventListener('keyup',(event) =>{
    if(event.code === "ArrowUp"){
-    head.style.height-="2.5%"
+    head.style.bottom+="2.5%"
    }
    else if(event.code ==="ArrowDown"){
-    head.style.height+="2.5%"
+    head.style.top="2.5%"
    }
 })
