@@ -1,28 +1,41 @@
-body{
+body {
     background-color: hsl(30, 38%, 92%);
     height: 98vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.head{
+
+.head {
     position: relative;
     bottom: 0%;
-    width:22%;
+    width: 22%;
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-img{
+img {
     width: 30%;
     height: 40%;
     float: right;
-
 }
-button{
+button {
     background-color: hsl(158, 36%, 37%);
     height: 7%;
-    width:32%;
+    width: 32%;
 }
+
+/* .card {
+    background-color: aquamarine;
+    display: flex;
+}
+
+.card > img {
+    width: 40%;
+}
+
+.cartContent {
+    padding: 1% 5%;
+} */
