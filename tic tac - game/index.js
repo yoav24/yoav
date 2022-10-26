@@ -1,5 +1,6 @@
 const root = document.querySelector('#root')
 const cell = document.getElementsByClassName('cell')
+const resetbtn = document.querySelector(".resetbtn")
 let player = "x"
 
 const winIndex = [
@@ -62,3 +63,7 @@ function checkWin(data) {
     }
     return false
 }
+resetbtn.addEventListener("click",()=>{
+    location.reload()
+    
+})
