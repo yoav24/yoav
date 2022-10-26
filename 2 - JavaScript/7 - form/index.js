@@ -10,7 +10,15 @@ const hendleSendData = (ev) => {
     root.innerHTML += `
         <div>
             <p>Name: ${nameOfUser}, age: ${ageOfUser}</p>
-           
         </div>
     `
 }
+
+const obj = {
+    name: "Katya",
+    getName: function () {
+        return this.name
+    }
+}
+
+console.log(obj.getName())
