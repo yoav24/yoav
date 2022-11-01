@@ -4,3 +4,13 @@ body{
     align-items: center;
     justify-content: center;
 }
+
+.root {
+    width: 80%;
+    margin: 5% auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.root div > img {
+    width: 80%;
+}
