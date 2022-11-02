@@ -12,6 +12,7 @@ const images = [
 ]
 
 const doubleCards = []
+let openedCards = []
 
 function shuffleFunction(arr) {
     return arr.sort(() => Math.round(Math.random() * 100) - 50)
@@ -47,7 +48,7 @@ function renderCards(cards) {
 
     cards.forEach(el => {
         html += `
-            <div id="${el.id}">
+            <div id="${el.id}" class="card">
                 <div class="backCard"></div>
                 <div class="frontCard">
                     <img src=${el.src} alt=${el.src}/>
@@ -57,14 +58,49 @@ function renderCards(cards) {
     });
 
     root.innerHTML = html
+
+    const allCardsOfGame = document.querySelectorAll(".card")
+
+    allCardsOfGame.forEach(cd => {
+        cd.addEventListener("click", () => {
+            console.log(cd.id)
+            cd.classList.toggle("flip")
+
+            if (openedCards.length === 0 || openedCards.length === 1) {
+                openedCards.push(cd)
+
+                checkCards()
+            }
+
+        })
+    })
 }
 
-resetbtn.addEventListener("click",()=>{
+const checkCards = () => {
+    if (openedCards.length === 2) {
+        if (openedCards[0].id == openedCards[1].id) {
+            console.log('you win')
+        } else {
+            console.log(`try again`)
+            setTimeout(() => {
+                openedCards[0].classList.toggle("flip")
+                openedCards[1].classList.toggle("flip")
+            }, 1000)
+        }
+        openedCards = []
+    }
+
+}
+
+resetbtn.addEventListener("click", () => {
     location.reload()
-    console.log("aa")
-    
+
+
 })
 
 // images.forEach.addEventListener('click',()=>{
 //     console.log("Aaaaaaa")
+// })
+// images.forEach(el=>{
+//     el.a
 // })
