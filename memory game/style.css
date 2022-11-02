@@ -13,9 +13,9 @@ body {
     height: 100vh;
 }
 
-.root div>img {
-    /* width: 80%; */
-}
+/* .root div>img {
+     width: 80%; 
+} */
 
 .card {
     width: 100%;
