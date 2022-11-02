@@ -40,15 +40,13 @@ function chooseLevel(level) {
 }
 
 function renderCards(cards) {
-
-    console.log(cards)
     document.querySelector(".welcome-page").style.display = "none"
 
     let html = ''
 
     cards.forEach(el => {
         html += `
-            <div id="${el.id}" class="card">
+            <div id="${el.id}" class="card" clikedFirst="true">
                 <div class="backCard"></div>
                 <div class="frontCard">
                     <img src=${el.src} alt=${el.src}/>
@@ -64,38 +62,37 @@ function renderCards(cards) {
     allCardsOfGame.forEach(cd => {
         cd.addEventListener("click", () => {
             console.log(cd.id)
-            cd.classList.toggle("flip")
+            cd.classList.add("flip")
 
             if (openedCards.length === 0 || openedCards.length === 1) {
                 openedCards.push(cd)
-
                 checkCards()
             }
-
         })
     })
 }
 
 const checkCards = () => {
     if (openedCards.length === 2) {
-        if (openedCards[0].id == openedCards[1].id) {
-            console.log('you win')
-        } else {
-            console.log(`try again`)
-            setTimeout(() => {
-                openedCards[0].classList.toggle("flip")
-                openedCards[1].classList.toggle("flip")
-            }, 1000)
-        }
+        checked(openedCards)
         openedCards = []
     }
+}
 
+const checked = (playedCards) => {
+    if (playedCards[0].id == playedCards[1].id) {
+        console.log('you win')
+    } else {
+        console.log(`try again`)
+        setTimeout(() => {
+            playedCards[0].classList.toggle("flip")
+            playedCards[1].classList.toggle("flip")
+        }, 1000)
+    }
 }
 
 resetbtn.addEventListener("click", () => {
     location.reload()
-
-
 })
 
 // images.forEach.addEventListener('click',()=>{
