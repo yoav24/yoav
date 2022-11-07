@@ -10,7 +10,7 @@ const images = [
     { id: 7, src: "./img/monkey.png" },
     { id: 8, src: "./img/dolphin.png" },
 ]
-
+const checkWinArr = []
 const doubleCards = []
 let openedCards = []
 
@@ -56,7 +56,7 @@ function renderCards(cards) {
     });
 
     root.innerHTML = html
-
+    
     const allCardsOfGame = document.querySelectorAll(".card")
 
     allCardsOfGame.forEach(cd => {
@@ -80,9 +80,14 @@ const checkCards = () => {
 }
 
 const checked = (playedCards) => {
-    if (playedCards[0].id == playedCards[1].id) {
+    if (playedCards[0].id ==playedCards[1].id) {
         console.log('you win')
-    } else {
+        checkWinArr.push(playedCards[0].id,playedCards[1].id) 
+        if(checkWinArr.length == doubleCards.length){
+            resetbtn.style.display = "block"
+        }
+    } 
+    else {
         console.log(`try again`)
         setTimeout(() => {
             playedCards[0].classList.toggle("flip")
