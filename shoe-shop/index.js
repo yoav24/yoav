@@ -1,16 +1,20 @@
 const root = document.querySelector(".root")
 const shoe_update = document.querySelector(".shoe_update")
+
 if (localStorage.getItem("shoes") == null) {
     localStorage.setItem("shoes", JSON.stringify([]))
     console.log(`created new lacolstorage`)
 } else {
     console.log(`we have a localstorage data`)
 }
+
 const uid = function () {
     return Date.now().toString(36) + Math.random().toString(36).substr(2);
 };
+
 const shoe_obj = {
     shoes: JSON.parse(localStorage.getItem("shoes")),
+
     render(shoes) {
         console.log(shoes)
         let html = ''
@@ -65,11 +69,11 @@ const shoe_obj = {
     },
     filter_shoew(searchItem) {
         const findShoes = this.shoes.filter(item => {
-            // item.shoe.includes(searchItem)
-            item.shoe == searchItem
+            return item.shoe.includes(searchItem)
         })
 
         console.log(findShoes)
+        this.render(findShoes)
     },
     sortShoes() {
         const shoesSorted = this.shoes.sort((a, b) => {
@@ -85,7 +89,8 @@ const shoe_obj = {
             // names must be equal
             return 0;
         });
-        console.log(shoesSorted)
+
+        this.render(shoesSorted)
     }
 }
 const rendershoes = () => {
@@ -114,6 +119,6 @@ function findShoe(ev) {
 
 }
 
-function sortShoesByName () {
+function sortShoesByName() {
     shoe_obj.sortShoes()
 }
