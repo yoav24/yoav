@@ -68,9 +68,9 @@ const shoe_obj = {
         this.render(this.shoes)
     },
     filter_shoew(searchItem) {
-        const findShoes = this.shoes.filter(item => {
-            return item.shoe.includes(searchItem)
-        })
+        const findShoes = this.shoes.filter(item =>
+            item.shoe.includes(searchItem)
+        )
 
         console.log(findShoes)
         this.render(findShoes)
