@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
-<body>
+<body onload="renderTasks()">
     <form onsubmit="get_task_from_form(event)">
         <input type="text" name="task" placeholder="Enter your text" />
         <label for="123">Choose date to start your task</label>
@@ -16,6 +16,7 @@
     </form>
 
     <div id="root"></div>
+    <div id ="task_update"></div>
 
     <script src="./index.js"></script>
 </body>
