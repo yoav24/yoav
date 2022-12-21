@@ -62,6 +62,30 @@ const shoe_obj = {
         this.shoes[index] = { id, shoe, shoe_img }
         localStorage.setItem("shoes", JSON.stringify(this.shoes))
         this.render(this.shoes)
+    },
+    filter_shoew(searchItem) {
+        const findShoes = this.shoes.filter(item => {
+            // item.shoe.includes(searchItem)
+            item.shoe == searchItem
+        })
+
+        console.log(findShoes)
+    },
+    sortShoes() {
+        const shoesSorted = this.shoes.sort((a, b) => {
+            const nameA = a.shoe.toUpperCase(); // ignore upper and lowercase
+            const nameB = b.shoe.toUpperCase(); // ignore upper and lowercase
+            if (nameA < nameB) {
+                return -1;
+            }
+            if (nameA > nameB) {
+                return 1;
+            }
+
+            // names must be equal
+            return 0;
+        });
+        console.log(shoesSorted)
     }
 }
 const rendershoes = () => {
@@ -85,10 +109,11 @@ const hendle_delete_shoe = (id) => {
 function findShoe(ev) {
     console.log(ev.target.value)
     const searchItem = ev.target.value
-    console.log(shoe_obj.shoes)
-    const findShoes = shoe_obj.shoes.filter(item => {
-        item.shoe.includes(searchItem)
-    })
 
-    console.log(findShoes)
+    shoe_obj.filter_shoew(searchItem)
+
+}
+
+function sortShoesByName () {
+    shoe_obj.sortShoes()
 }
