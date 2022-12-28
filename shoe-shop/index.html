@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/bbe9c27a63.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
@@ -12,19 +13,22 @@
 <body onload="rendershoes()">
     <nav>
         <a href="#">Home Page</a>
+        <button id="cart"></button>
         <input type="text" name="search-name" onchange="findShoe(event)">
     </nav>
 
     <!-- Create navbar with links to homepage, filter (search by name), sort -->
-    <!-- Create cart and show the items that in the cart, Bonus: Create icon of cart, 
-        show number of items in the cart. onclick show the items of cart -->
-    <button onclick="sortShoesByName()">Sort By Name</button>
+
+    
+    
+        <button onclick="sortShoesByName()">Sort</button>
     <form onsubmit="get_obj_from_form(event)">
         <input type="text" name="shoe" placeholder="enter your shoe">
         <input type="url" name="shoe_img" placeholder="enter your image url">
         <button type="submit">add</button>
     </form>
 
+    <div class="buyshoe"></div>
     <div class="root"></div>
     <div class="shoe_update"></div>
     <script src="./index.js"></script>

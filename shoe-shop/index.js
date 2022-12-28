@@ -1,4 +1,6 @@
 const root = document.querySelector(".root")
+const buyShoe = document.querySelector(".buyshoe")
+const cart = document.querySelector("#cart")
 const shoe_update = document.querySelector(".shoe_update")
 
 if (localStorage.getItem("shoes") == null) {
@@ -7,6 +9,13 @@ if (localStorage.getItem("shoes") == null) {
 } else {
     console.log(`we have a localstorage data`)
 }
+if (localStorage.getItem("buyShoes") == null) {
+    localStorage.setItem("buyShoes", JSON.stringify([]))
+    console.log(`created new lacolstorage`)
+} else {
+    console.log(`we have a localstorage data`)
+}
+
 
 const uid = function () {
     return Date.now().toString(36) + Math.random().toString(36).substr(2);
@@ -14,7 +23,7 @@ const uid = function () {
 
 const shoe_obj = {
     shoes: JSON.parse(localStorage.getItem("shoes")),
-
+    buyShoes: JSON.parse(localStorage.getItem("buyShoes")),
     render(shoes) {
         console.log(shoes)
         let html = ''
@@ -24,11 +33,32 @@ const shoe_obj = {
     <img src='${el.shoe_img}' alt="Image of shoes" height="50px" width="50px">
     <button onclick="hendle_delete_shoe('${el.id}')">delete</button>
     <button onclick="hendle_edit_shoe('${el.id}')">uptade</button>
+    <button onclick="hendle_buy_shoe('${el.id}')"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>
     </div>
     `});
         root.innerHTML = html
 
     },
+    render_buy_shoes(buyShoes) {
+        console.log(buyShoes)
+        let html = ''
+        if (buyShoes.length>0){
+            buyShoes.forEach(el => {
+                html += `<div>
+        <p>${el.shoe}</p>
+        <img src='${el.shoe_img}' alt="Image of shoes" height="50px" width="50px">
+        <button onclick="hendle_delete_buy_shoe('${el.id}')">delete</button>
+        </div>
+        `});
+        }
+        else{
+            html=`<div>cart empty</div>`
+        }
+        
+        
+    buyShoe.innerHTML = html
+
+  },
     renderOneShoe(shoe) {
         let html = `
         <form onsubmit="get_update_shoe_from_form(event)" id="${shoe.id}">
@@ -51,6 +81,21 @@ const shoe_obj = {
         localStorage.setItem("shoes", JSON.stringify(this.shoes))
         this.render(this.shoes)
     },
+    delete_buy_shoe(id) {
+        this.buyShoes = this.buyShoes.filter(item => item.id !== id)
+        this.render_buy_shoes(this.buyShoes)
+        localStorage.setItem("buyShoes", JSON.stringify(this.buyShoes))
+        this.showCartMount(cart, this.buyShoes)
+    },
+    buy_shoe(id) {
+        const findShoe = this.shoes.find(item => item.id == id)
+        this.buyShoes.push(findShoe)
+        console.log(this.buyShoes)
+        this.render_buy_shoes(this.buyShoes)
+        this.showCartMount(cart, this.buyShoes)
+        localStorage.setItem("buyShoes", JSON.stringify(this.buyShoes))
+    },
+    
     edit_shoe(id) {
         const shoe = this.shoes.filter(item => item.id == id)
         this.renderOneShoe(shoe[0])
@@ -91,8 +136,19 @@ const shoe_obj = {
         });
 
         this.render(shoesSorted)
+    },
+    showCartMount(el, buyShoes) {
+        el.innerHTML = `
+            <div>we have :${buyShoes.length} in the cart</div>
+        `
     }
 }
+buyShoe.style.display="none"
+cart.addEventListener('click',()=>{
+    console.log(buyShoe)
+    buyShoe.style.display="block"
+})
+
 const rendershoes = () => {
     shoe_obj.render(shoe_obj.shoes)
 }
@@ -111,6 +167,12 @@ const hendle_edit_shoe = (id) => {
 const hendle_delete_shoe = (id) => {
     shoe_obj.delete_shoe(id)
 }
+const hendle_delete_buy_shoe = (id) => {
+    shoe_obj.delete_buy_shoe(id)
+}
+const hendle_buy_shoe = (id) => {
+    shoe_obj.buy_shoe(id)
+}
 function findShoe(ev) {
     console.log(ev.target.value)
     const searchItem = ev.target.value
@@ -122,3 +184,5 @@ function findShoe(ev) {
 function sortShoesByName() {
     shoe_obj.sortShoes()
 }
+
+shoe_obj.showCartMount(cart, shoe_obj.buyShoes)
