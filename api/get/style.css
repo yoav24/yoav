@@ -1,0 +1,25 @@
+
+body{
+    height: 97vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.jock{
+    color: rgb(46, 43, 43);
+    animation-name: buttonAnimation;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+@keyframes buttonAnimation{
+    50%{
+        color: rgba(46, 43, 43, 0);
+    }
+
+}
+p{
+    color:black;
+}
+h1{
+    color: black ;
+}
