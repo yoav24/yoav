@@ -24,25 +24,29 @@ const uid = function () {
 const shoe_obj = {
     shoes: JSON.parse(localStorage.getItem("shoes")),
     buyShoes: JSON.parse(localStorage.getItem("buyShoes")),
+
     render(shoes) {
         console.log(shoes)
+
         let html = ''
+
         shoes.forEach(el => {
             html += `<div>
-    <p>${el.shoe}</p>
-    <img src='${el.shoe_img}' alt="Image of shoes" height="50px" width="50px">
-    <button onclick="hendle_delete_shoe('${el.id}')">delete</button>
-    <button onclick="hendle_edit_shoe('${el.id}')">uptade</button>
-    <button onclick="hendle_buy_shoe('${el.id}')"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>
-    </div>
+                <p>${el.shoe}</p>
+                <img src='${el.shoe_img}' alt="Image of shoes" height="50px" width="50px">
+                <button onclick="hendle_delete_shoe('${el.id}')">delete</button>
+                <button onclick="hendle_edit_shoe('${el.id}')">uptade</button>
+                <button onclick="hendle_buy_shoe('${el.id}')"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>
+                </div>
     `});
         root.innerHTML = html
 
     },
+
     render_buy_shoes(buyShoes) {
         console.log(buyShoes)
         let html = ''
-        if (buyShoes.length>0){
+        if (buyShoes.length > 0) {
             buyShoes.forEach(el => {
                 html += `<div>
         <p>${el.shoe}</p>
@@ -51,14 +55,14 @@ const shoe_obj = {
         </div>
         `});
         }
-        else{
-            html=`<div>cart empty</div>`
+        else {
+            html = `<div>cart empty</div>`
         }
-        
-        
-    buyShoe.innerHTML = html
 
-  },
+
+        buyShoe.innerHTML = html
+
+    },
     renderOneShoe(shoe) {
         let html = `
         <form onsubmit="get_update_shoe_from_form(event)" id="${shoe.id}">
@@ -95,7 +99,7 @@ const shoe_obj = {
         this.showCartMount(cart, this.buyShoes)
         localStorage.setItem("buyShoes", JSON.stringify(this.buyShoes))
     },
-    
+
     edit_shoe(id) {
         const shoe = this.shoes.filter(item => item.id == id)
         this.renderOneShoe(shoe[0])
@@ -143,10 +147,10 @@ const shoe_obj = {
         `
     }
 }
-buyShoe.style.display="none"
-cart.addEventListener('click',()=>{
+buyShoe.style.display = "none"
+cart.addEventListener('click', () => {
     console.log(buyShoe)
-    buyShoe.style.display="block"
+    buyShoe.style.display = "block"
 })
 
 const rendershoes = () => {
