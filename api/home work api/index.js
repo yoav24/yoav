@@ -1,7 +1,8 @@
 const presentApi = document.querySelector(".presentApi")
 const addUserAddress = document.querySelector(".addUserAddress")
-const getDataFromApi = async()=>{
-    const {data}= await axios.get('https://jsonplaceholder.typicode.com/users')
+
+const getDataFromApi = async () => {
+    const { data } = await axios.get('https://jsonplaceholder.typicode.com/users')
     console.log(data)
 
     const usersNames = data.map(item => {
@@ -10,19 +11,23 @@ const getDataFromApi = async()=>{
 
     console.log(usersNames)
 
-   let addToHTML = ''
-    data.forEach(user=>{addToHTML +=`
-    <div style="border: 1px solid white;">
+    let addToHTML = ''
+    data.forEach(user => {
+        addToHTML += `
+    <div class="user">
         <p>${user.name}</p>
         <p>${user.email}</p>
-        <p>${user.phone}</p>
-
         
+        <p>${user.phone}</p>
+        </div>
     `})
+
     presentApi.innerHTML = addToHTML
-    addUserAddress.addEventListener('click',()=>{
+
+    addUserAddress.addEventListener('click', () => {
         addToHTML = ``
-        data.forEach(user=>{addToHTML +=`
+        data.forEach(user => {
+            addToHTML += `
         <div class="users">
             <p>${user.name}</p>
             <p>${user.email}</p>
@@ -40,9 +45,11 @@ const getDataFromApi = async()=>{
 </div>        
 `})
 
-presentApi.innerHTML= addToHTML
-})    
+        presentApi.innerHTML = addToHTML
+    })
 }
+
+/* !!!!!Must to be 2 functions at least*/
 // מהו השימוש של css
 // מהם ההבדלים בין הסלקטורים ואיזה יש
 // מהו הכתיבה הנכונה של הקוד

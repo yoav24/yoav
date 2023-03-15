@@ -2,6 +2,7 @@ const root = document.querySelector(".root")
 const buyShoe = document.querySelector(".buyshoe")
 const cart = document.querySelector("#cart")
 const shoe_update = document.querySelector(".shoe_update")
+const navbar = document.querySelector(".navbar")
 
 if (localStorage.getItem("shoes") == null) {
     localStorage.setItem("shoes", JSON.stringify([]))
@@ -31,7 +32,7 @@ const shoe_obj = {
         let html = ''
 
         shoes.forEach(el => {
-            html += `<div>
+            html += `<div class="shownShoe">
                 <p>${el.shoe}</p>
                 <img src='${el.shoe_img}' alt="Image of shoes" height="50px" width="50px">
                 <button onclick="hendle_delete_shoe('${el.id}')">delete</button>
@@ -190,3 +191,7 @@ function sortShoesByName() {
 }
 
 shoe_obj.showCartMount(cart, shoe_obj.buyShoes)
+
+function handleOpenNavBar() {
+    navbar.classList.toggle("openMenu")
+}

@@ -1,0 +1,247 @@
+body {
+    height: 120vh;
+    width: 10vh;
+    margin: 0;
+}
+
+.nav-bar {
+    width: 100%;
+    padding: 1% 0;  
+    margin-bottom: 1%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+.elements-nav-bar {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 8fr 0.3fr 3fr;
+    justify-items: center;
+    margin: 0;
+}
+
+@media screen and (max-width: 800px) {
+    .elements-nav-bar {
+        grid-template-columns: 0.3fr 1.3fr 6fr 0.2fr 4fr;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .elements-nav-bar {
+        grid-template-columns: 0.3fr 1.6fr 6fr 0.2fr 2.7fr;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .elements-nav-bar {
+        grid-template-columns: 0.2fr 2fr 5fr 0.2fr 2.8fr;
+        font-size: 0.7em;
+    }
+}
+
+.elements-nav-bar i {
+    padding: 0.5em;
+}
+
+
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    border: 1px solid black;
+    border-radius: 0.5px;
+}
+
+@media screen and (max-width: 500px) {
+    .search-bar input {
+        display: none;
+    }
+}
+.my-account{
+    display: flex;
+    align-items: center;
+    color: rgb(53,138,211);
+    border: 2px solid rgb(53,138,211);
+    border-radius:1rem;
+    font-size: 0.8em;
+}
+.fa-youtube{
+    color: red;
+}
+.side-bar{
+    height: 100vh;
+    width: 200px;
+    margin-right: 1px;
+    padding-left: 1% ;
+    position: fixed;
+    background-color: antiquewhite;
+    top: 7vh;
+    overflow-y: scroll;
+}
+
+/* @media screen and (max-width:1310px) {
+    .side-bar-disactive {
+        width: 100px;
+        overflow-y:hidden;
+    }
+    .home-page,.shorts-vidoes,.subscription-icon,.favorite-vidoes,.last-vidoes{
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 7%;
+    }
+    .explore-options{
+        display: none;
+    }
+    hr{
+        display: none;
+    }
+} */
+@media screen and (max-width:790px) {
+    .side-bar{
+        display:none;
+    }
+}
+
+/*
+1. in media query of 360px a sidebar is display: none
+2. create a onclick function that will show/hide us the full navbar (icons + text)
+*/
+
+svg{
+    height: 24px;
+    width: 24px; 
+}
+.home-page,.shorts-vidoes,.subscription-icon,.favorite-vidoes,.last-vidoes,.trending,.music,.gaming,.news,.sports,.youtube-icon{
+    display: flex;
+    align-items: center;
+}
+p{
+    padding: 0;
+    margin: 3%;
+}
+hr{
+    height: 0.5px;
+    border: none;
+    background-color: black;
+}
+
+main {
+    width: 80vw;
+    background-color: aqua;
+    margin-top: 10vh;
+    margin-left: 11vw;
+}
+
+.home-page-vidoes{
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+}
+@media screen and (max-width:1460px){
+    .home-page-vidoes{
+        grid-template-columns:repeat(3,1fr);
+    } 
+    main {
+        width: 70vw;
+        margin-left: 23vw;
+    }
+    
+}
+@media screen and (max-width:890px){
+    .home-page-vidoes{
+        grid-template-columns:repeat(2,1fr);
+    } 
+    main {
+        width: 60vw;
+        margin-left: 28vw;
+    }
+    
+}
+@media screen and (max-width:700px){
+    .home-page-vidoes{
+        grid-template-columns:repeat(1,1fr);
+    } 
+    main {
+        width: 50vw;
+    }
+    
+}
+.whole-vidoe{
+    margin: 5%;
+    background-color: aqua;
+    width: 200px;
+}
+.vidoe {
+    width: 200px;
+    height: 150px;
+}
+.channel-image{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.viewsTime {
+    display: flex;
+    width: 100%;
+}
+
+.video-information {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    align-items: center
+}
+
+.video-information > h3 {
+    grid-area: 1 / 2 / 3 / 3;
+}
+
+.video-information > h6 {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.video-information > div {
+    grid-area: 3 / 2 / 4/ 3;
+}
+
+.video-information > h3, .video-information > h6 {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+/* .side-bar-disappear{
+    display: none;
+} */
+@media screen and (max-width:790px) {
+    .side-bar-disappear {
+        display:block;
+        /* height: 100vh;
+        width: 200px;
+        margin-right: 1px;
+        padding-left: 1% ;
+        position: fixed;
+        background-color: antiquewhite;
+        top: 7vh;
+        overflow-y: scroll; */
+    }
+}
+
+.side-bar-icons-dis{
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 7%;
+}
+.explore-disappear{
+    display:none;
+}
+.side-shorter{
+    width: 100px;
+    overflow-y:hidden;
+    padding: 0;
+}

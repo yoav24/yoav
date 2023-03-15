@@ -11,17 +11,17 @@
 </head>
 
 <body onload="rendershoes()">
+    <div></div>
     <nav>
-        <a href="#">Home Page</a>
-        <button id="cart"></button>
-        <input type="text" name="search-name" onchange="findShoe(event)">
+        <div class="menu-phone" onclick="handleOpenNavBar()">menu</div>
+        <div class="navbar">
+            <a href="#">Home Page</a>
+            <button id="cart"></button>
+            <input type="text" name="search-name" onchange="findShoe(event)">
+            <button onclick="sortShoesByName()">Sort</button>
+        </div>
+
     </nav>
-
-    <!-- Create navbar with links to homepage, filter (search by name), sort -->
-
-    
-    
-        <button onclick="sortShoesByName()">Sort</button>
     <form onsubmit="get_obj_from_form(event)">
         <input type="text" name="shoe" placeholder="enter your shoe">
         <input type="url" name="shoe_img" placeholder="enter your image url">
