@@ -27,9 +27,9 @@ function sideBarDisappear(){
 
 window.addEventListener('click',(e)=>{
     console.log(e)
-    console.log(e.target.className)
+    console.log(e.target.localName)
 
-    if(e.target.className !== "side-bar") {
+    if(e.target.localName !== "aside") {
        console.log(`side`)
         // sideBar.classList.remove("side-bar-disappear")
     }
