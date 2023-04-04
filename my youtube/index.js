@@ -32,13 +32,6 @@ function sideBarDisappear() {
 
 window.addEventListener('click', (e) => {
     console.log(e)
-<<<<<<< Updated upstream
-    console.log(e.target.localName)
-
-    if(e.target.localName !== "aside") {
-       console.log(`side`)
-        // sideBar.classList.remove("side-bar-disappear")
-=======
 
     console.log(e.target.localName == "html")
 
@@ -48,6 +41,5 @@ window.addEventListener('click', (e) => {
         } else if (e.target.localName == "html") {
             sideBar.classList.remove("side-bar-disappear")
         }
->>>>>>> Stashed changes
     }
 })
